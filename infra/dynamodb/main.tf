@@ -47,7 +47,7 @@ resource "aws_dynamodb_table" "cards" {
   }
 
   tags = merge(var.tags, {
-    TableRole = "Estado de tarjeta: saldo, tipo, parametros de consumo"
+    TableRole = "Estado de tarjeta - saldo tipo y parametros de consumo"
   })
 }
 
@@ -72,7 +72,7 @@ resource "aws_dynamodb_table" "blacklist" {
   }
 
   tags = merge(var.tags, {
-    TableRole = "Lista negra (CU-02)"
+    TableRole = "Lista negra CU-02"
   })
 }
 
@@ -95,7 +95,7 @@ resource "aws_dynamodb_table" "whitelist" {
   }
 
   tags = merge(var.tags, {
-    TableRole = "Lista blanca (CU-01)"
+    TableRole = "Lista blanca CU-01"
   })
 }
 
@@ -129,6 +129,6 @@ resource "aws_dynamodb_table" "validation_log" {
   }
 
   tags = merge(var.tags, {
-    TableRole = "Historico de validaciones (CU-03)"
+    TableRole = "Historico de validaciones CU-03"
   })
 }
