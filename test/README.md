@@ -1,4 +1,4 @@
-# Script de verificación del profesor
+# Script de verificación.
 
 ## Uso
 
