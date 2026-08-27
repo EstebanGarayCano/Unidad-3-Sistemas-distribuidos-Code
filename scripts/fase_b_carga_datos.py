@@ -165,9 +165,14 @@ def build_whitelist(card_id, card_type):
 
 def build_validation_logs(card_id, card_type, is_blacklisted, modo, ttl_days, n_events):
     items = []
-    base = now_utc() - timedelta(days=random.randint(0, 30))
+    # Timestamp acumulativo (cada evento = el anterior + un offset positivo):
+    # garantiza unicidad de la Sort Key sin depender del azar. La version
+    # anterior (base + k*offset_aleatorio) podia producir el mismo timestamp
+    # para dos eventos del mismo card_id cuando offset1 == 2*offset2,
+    # causando "Provided list of keys contains duplicates" en BatchWriteItem.
+    ts = now_utc() - timedelta(days=random.randint(0, 30))
     for k in range(n_events):
-        ts = base + timedelta(seconds=k * random.randint(30, 600))
+        ts = ts + timedelta(seconds=random.randint(30, 600))
         device_type = weighted_choice([("STATION", 0.45), ("BUS", 0.55)])
 
         if is_blacklisted and random.random() < 0.6:
