@@ -26,7 +26,7 @@ terraform plan
 terraform apply
 ```
 
-Al terminar, `terraform output table_names` lista los nombres exactos a usar con el script de verificación del profesor:
+Al terminar, `terraform output table_names` lista los nombres:
 
 ```bash
 python script3phase1.py --profile sitp-sandbox Cards
