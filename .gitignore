@@ -17,3 +17,7 @@ terraform.rc
 .DS_Store
 venv/
 __pycache__/
+
+# .NET
+bin/
+obj/

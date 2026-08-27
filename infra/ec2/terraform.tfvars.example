@@ -1,0 +1,7 @@
+# Copiar como terraform.tfvars (ese archivo esta en .gitignore, no se sube).
+
+aws_region  = "us-east-1"
+aws_profile = "estebangaca"
+
+# Salida de: curl -s https://checkip.amazonaws.com
+my_ip_cidr = "TU_IP/32"
