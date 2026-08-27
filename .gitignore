@@ -21,3 +21,8 @@ __pycache__/
 # .NET
 bin/
 obj/
+
+# JMeter run output (evidencia se sube aparte, deliberadamente)
+test/PerformanceTest/resultados.csv
+test/PerformanceTest/jmeter.log
+*.jtl

@@ -51,14 +51,21 @@ resource "aws_security_group" "validation_api" {
 }
 
 resource "aws_instance" "validation_api" {
-  ami                    = data.aws_ami.amazon_linux.id
-  instance_type          = var.instance_type
-  key_name               = var.key_name
-  iam_instance_profile   = var.instance_profile_name
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = var.instance_type
+  key_name      = var.key_name
+  # No se asigna iam_instance_profile: el rol IAM esta en solo lectura en el
+  # Sandbox y bloquea tambien iam:PassRole (verificado con un intento real de
+  # apply -- UnauthorizedOperation: ... is not authorized to perform:
+  # iam:PassRole). No importa que EMR_EC2_DefaultRole ya exista y tenga
+  # dynamodb:*: no podemos "asignarselo" a la instancia al lanzarla. En su
+  # lugar, la app recibe las credenciales temporales de la sesion como
+  # variables de entorno al correr el contenedor Docker (ver services/
+  # ValidationApi/README.md).
   vpc_security_group_ids = [aws_security_group.validation_api.id]
 
   root_block_device {
-    volume_size = 20 # dentro del limite de 35 GB del Sandbox
+    volume_size = 30 # AMI base requiere >=30GB; limite del Sandbox es 35GB
     volume_type = "gp2"
   }
 

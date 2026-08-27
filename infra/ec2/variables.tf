@@ -22,12 +22,6 @@ variable "key_name" {
   default     = "vockey"
 }
 
-variable "instance_profile_name" {
-  description = "Instance profile IAM ya existente en la cuenta (no podemos crear uno nuevo, IAM esta en solo lectura). EMR_EC2_DefaultRole ya tiene dynamodb:* sobre Resource *."
-  type        = string
-  default     = "EMR_EC2_DefaultRole"
-}
-
 variable "my_ip_cidr" {
   description = "Tu IP publica en formato CIDR (ej. 181.56.52.254/32), para restringir el acceso SSH solo a ti."
   type        = string
