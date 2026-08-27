@@ -1,0 +1,5 @@
+# Copiar como terraform.tfvars y ajustar (terraform.tfvars esta en .gitignore,
+# no se sube -- puede llevar el nombre del perfil ligado a credenciales locales).
+
+aws_region  = "us-east-1"
+aws_profile = "sitp-sandbox"
