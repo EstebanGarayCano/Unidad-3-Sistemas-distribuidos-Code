@@ -2,8 +2,6 @@
 #
 # Usa la VPC y el AMI de Amazon Linux por defecto de la cuenta (el Sandbox
 # solo permite AMIs provistas por Amazon). El acceso es unicamente por SSH
-# desde tu IP -- el puerto de la aplicacion (5001) nunca se abre al publico,
-# se llega a el mediante un tunel SSH desde tu maquina.
 
 data "aws_vpc" "default" {
   default = true
