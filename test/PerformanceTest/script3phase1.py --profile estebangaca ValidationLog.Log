@@ -1,0 +1,97 @@
+==================================================================
+ INFORMACIÓN DETALLADA Y APROVISIONAMIENTO: ValidationLog
+==================================================================
+Estado de la Tabla         : ACTIVE
+Clase de Tabla (Storage)   : STANDARD
+Conteo de Ítems (Aprox.)   : 0
+Tamaño de Tabla (Aprox.)   : 0.00 MB (0 bytes)
+
+--- Esquema de Clave Primaria (Primary Key) ---
+  • Partition Key (HASH): cardId (Tipo: S)
+  • Sort Key (RANGE)    : timestamp (Tipo: S)
+
+--- Capacidad y Aprovisionamiento de la Tabla ---
+Modo de Facturación / Capacidad : PAY_PER_REQUEST
+  • Read Request Units Máximos  : 100
+  • Write Request Units Máximos : 100
+
+--- Warm Throughput (Pre-provisioned Instant Capacity) ---
+  • Read Units Regulados (Warm) : 12000
+  • Write Units Regulados (Warm): 4000
+  • Estado                      : ACTIVE
+
+--- Índices Secundarios Globales (GSI) [0] ---
+  Ninguno registrado.
+
+--- Índices Secundarios Locales (LSI) [0] ---
+  Ninguno registrado.
+
+==================================================================
+ MUESTRA DE REGISTROS (MÁXIMO 5)
+==================================================================
+
+--- Registro #1 ---
+{
+  "deviceId": "BUS-FONTIBON-8316",
+  "deviceType": "BUS",
+  "timestamp": "2026-07-30T21:27:33.006Z",
+  "ttl": 1822425549,
+  "result": "ALLOW",
+  "balanceAfter": 9874,
+  "reasonCode": "OK",
+  "cardId": "CARD-00008808"
+}
+
+--- Registro #2 ---
+{
+  "deviceId": "BUS-FONTIBON-8762",
+  "deviceType": "BUS",
+  "timestamp": "2026-07-30T21:33:30.006Z",
+  "ttl": 1822425549,
+  "result": "ALLOW",
+  "balanceAfter": 7907,
+  "reasonCode": "OK",
+  "cardId": "CARD-00008808"
+}
+
+--- Registro #3 ---
+{
+  "deviceId": "RICAURTE",
+  "deviceType": "STATION",
+  "timestamp": "2026-07-30T21:38:15.006Z",
+  "ttl": 1822425549,
+  "result": "ALLOW",
+  "balanceAfter": 35601,
+  "reasonCode": "OK",
+  "cardId": "CARD-00008808"
+}
+
+--- Registro #4 ---
+{
+  "deviceId": "PORTAL-20-DE-JULIO",
+  "deviceType": "STATION",
+  "timestamp": "2026-08-17T21:23:53.804Z",
+  "ttl": 1822425453,
+  "result": "ALLOW",
+  "balanceAfter": 9001,
+  "reasonCode": "OK",
+  "cardId": "CARD-00003750"
+}
+
+--- Registro #5 ---
+{
+  "deviceId": "BUS-KENNEDY-1234",
+  "deviceType": "BUS",
+  "timestamp": "2026-08-17T21:26:40.804Z",
+  "ttl": 1822425453,
+  "result": "ALLOW",
+  "balanceAfter": 38382,
+  "reasonCode": "OK",
+  "cardId": "CARD-00003750"
+}
+
+==================================================================
+ REPORTE FINAL: CONTEO DE REGISTROS (MEDIANTE SCAN)
+==================================================================
+Escaneando la tabla para obtener el número total de registros real...
+Número total de registros en la tabla: 46,744
